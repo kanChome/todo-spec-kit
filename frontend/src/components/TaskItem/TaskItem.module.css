@@ -1,0 +1,220 @@
+.taskItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  list-style: none;
+}
+
+.taskItem:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.taskItem.completed {
+  opacity: 0.7;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.checkboxLabel {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkboxCustom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked + .checkboxCustom {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.checkbox:focus + .checkboxCustom {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.checkbox:disabled + .checkboxCustom {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: white;
+}
+
+.description {
+  flex: 1;
+  min-width: 0;
+}
+
+.descriptionText {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: break-word;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  border-radius: 0.25rem;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.descriptionText:hover,
+.descriptionText:focus {
+  background-color: #f9fafb;
+}
+
+.completedText {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+.editInput {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #3b82f6;
+  border-radius: 0.25rem;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.editInput:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+  color: #9ca3af;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.deleteButton:hover {
+  background-color: #fef2f2;
+  color: #ef4444;
+}
+
+.deleteButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}
+
+.deleteButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.deleteIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.metadata {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-left: 2rem;
+}
+
+.timestamp {
+  font-variant-numeric: tabular-nums;
+}
+
+.updated {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .taskItem {
+    padding: 0.75rem;
+  }
+
+  .content {
+    gap: 0.5rem;
+  }
+
+  .deleteButton {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .deleteIcon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .metadata {
+    margin-left: 1.75rem;
+    font-size: 0.6875rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .taskItem {
+    border-width: 2px;
+  }
+
+  .checkboxCustom {
+    border-width: 3px;
+  }
+
+  .completedText {
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .taskItem,
+  .checkboxCustom,
+  .descriptionText,
+  .deleteButton {
+    transition: none;
+  }
+}
