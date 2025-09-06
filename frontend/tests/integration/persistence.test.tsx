@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '@/App';
@@ -30,7 +30,7 @@ describe('Integration: Data Persistence', () => {
     await expect(screen.findByText('Third task')).resolves.toBeInTheDocument();
     
     const checkboxes = screen.getAllByRole('checkbox');
-    await user.click(checkboxes[1]); // Complete middle task
+    await user.click(checkboxes[1]!); // Complete middle task
     
     // Wait for the toggle to complete
     await new Promise(resolve => setTimeout(resolve, 50));
@@ -227,8 +227,8 @@ describe('Integration: Data Persistence', () => {
 
     // Complete some tasks
     const checkboxes = screen.getAllByRole('checkbox');
-    await user.click(checkboxes[0]); // Complete newest
-    await user.click(checkboxes[2]); // Complete middle
+    await user.click(checkboxes[0]!); // Complete newest
+    await user.click(checkboxes[2]!); // Complete middle
 
     // Edit a task
     const taskText = screen.getByText('Task 3');

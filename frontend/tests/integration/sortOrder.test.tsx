@@ -54,7 +54,7 @@ describe('Integration: Sort Order', () => {
     await expect(screen.findByText('Task C')).resolves.toBeInTheDocument();
     
     const checkboxes = screen.getAllByRole('checkbox');
-    await user.click(checkboxes[1]); // Task B checkbox
+    await user.click(checkboxes[1]!); // Task B checkbox
     
     // Wait for the toggle to complete
     await new Promise(resolve => setTimeout(resolve, 50));
@@ -244,7 +244,7 @@ describe('Integration: Sort Order', () => {
 
     // Complete a task
     const checkboxes = screen.getAllByRole('checkbox');
-    await user.click(checkboxes[0]);
+    await user.click(checkboxes[0]!);
 
     // Add another task
     await user.type(input, 'Task 3');

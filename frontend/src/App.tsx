@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { TaskInput } from '@/components/TaskInput/TaskInput';
 import { TaskList } from '@/components/TaskList/TaskList';
 import { useTasks } from '@/hooks/useTasks';

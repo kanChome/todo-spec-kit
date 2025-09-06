@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import type { Task } from '@/lib/task-manager/types';
 import { TaskItem } from '../TaskItem/TaskItem';
 import styles from './TaskList.module.css';

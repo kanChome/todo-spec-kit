@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { toggleTask, createTask } from '@/lib/task-manager/tasks';
 
 describe('Contract: toggleTask', () => {

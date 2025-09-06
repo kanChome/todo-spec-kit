@@ -90,7 +90,7 @@ describe('Integration: Complete Task Flow', () => {
 
     // Complete the second task
     const checkboxes = screen.getAllByRole('checkbox');
-    await user.click(checkboxes[0]); // Complete the first one in the list (most recent)
+    await user.click(checkboxes[0]!); // Complete the first one in the list (most recent)
 
     // Verify visual distinction
     expect(checkboxes[0]).toBeChecked();
